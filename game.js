@@ -257,7 +257,7 @@ function showMessage(text, type = "") {
 
   setTimeout(() => {
     messageElement.className = "message";
-  }, 2000);
+  }, 5000);
 }
 
 // Shake animation for invalid guesses
@@ -345,8 +345,10 @@ function restartGame() {
   // Hide restart button
   document.getElementById("restartBtn").style.display = "none";
 
-  // Clear message
-  document.getElementById("message").className = "message";
+  // Clear message immediately
+  const messageElement = document.getElementById("message");
+  messageElement.className = "message";
+  messageElement.textContent = "";
 }
 
 // Add shake animation to CSS
